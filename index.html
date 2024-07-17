@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chasse au Trésor</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Chasse au Trésor</h1>
+        <p>Bien joué, mes chers aventuriers ! Vous touchez au but! Si vous parvenez à résoudre l'énigme suivante, l'emplacement du trésor vous sera indiqué. La voici:</p>
+        <p class="enigme">"Je commence par un E et je finis par un E, et pourtant je ne contiens qu'une lettre. Que suis-je ?"</p>
+        <p>La réponse attendue est tout en minuscule, en un mot.</p>
+        <input type="text" id="answer" placeholder="Entrez votre réponse ici">
+        <button onclick="checkAnswer()">Soumettre</button>
+        <p id="message"></p>
+    </div>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value.toLowerCase();
+            const message = document.getElementById('message');
+            if (answer === 'enveloppe') {
+                message.textContent = 'BRAVO! Quels esprits aiguisés! Fouillez plus en profondeur le four...';
+                message.style.color = 'green';
+            } else {
+                message.textContent = 'Eh non, essayez encore!';
+                message.style.color = 'red';
+            }
+        }
+    </script>
+</body>
+</html>
